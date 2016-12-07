@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @rapport.comment %>
+</p>
+
+<p>
+  <strong>Blacklist:</strong>
+  <%= @rapport.blacklist %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @rapport.note %>
+</p>
+
+<%= link_to 'Edit', edit_rapport_path(@rapport) %> |
+<%= link_to 'Back', rapports_path %>

@@ -1,0 +1,29 @@
+<%= form_for(@rapport) do |f| %>
+  <% if @rapport.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rapport.errors.count, "error") %> prohibited this rapport from being saved:</h2>
+
+      <ul>
+      <% @rapport.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :blacklist %><br>
+    <%= f.check_box :blacklist %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.number_field :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

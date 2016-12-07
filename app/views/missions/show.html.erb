@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mission.name %>
+</p>
+
+<p>
+  <strong>Nombre jour:</strong>
+  <%= @mission.nombre_jour %>
+</p>
+
+<p>
+  <strong>Nbr ideal benevole:</strong>
+  <%= @mission.nbr_ideal_benevole %>
+</p>
+
+<p>
+  <strong>Duree shift:</strong>
+  <%= @mission.duree_shift %>
+</p>
+
+<%= link_to 'Edit', edit_mission_path(@mission) %> |
+<%= link_to 'Back', missions_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('rapports.index.title') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('rapports.index.comment') %></th>
+      <th><%= t('rapports.index.blacklist') %></th>
+      <th><%= t('rapports.index.note') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rapports.each do |rapport| %>
+      <tr>
+        <td><%= rapport.comment %></td>
+        <td><%= rapport.blacklist %></td>
+        <td><%= rapport.note %></td>
+        <td><%= link_to t('tableau.show'), rapport %></td>
+        <td><%= link_to t('tableau.edit'), edit_rapport_path(rapport) %></td>
+        <td><%= link_to t('tableau.destroy'), rapport, method: :delete, data: { confirm: t('tableau.confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('rapports.index.new'), new_rapport_path %>

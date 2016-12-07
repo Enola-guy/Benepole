@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('personnes.index.title') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('personnes.index.name') %></th>
+      <th><%= t('personnes.index.surname') %></th>
+      <th><%= t('personnes.index.birthdate') %></th>
+      <th><%= t('personnes.index.phone') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personnes.each do |personne| %>
+      <tr>
+        <td><%= personne.name %></td>
+        <td><%= personne.surname %></td>
+        <td><%= personne.birthdate %></td>
+        <td><%= personne.phone %></td>
+        <td><%= link_to t('tableau.show'), personne %></td>
+        <td><%= link_to t('tableau.edit'), edit_personne_path(personne) %></td>
+        <td><%= link_to t('tableau.destroy'), personne, method: :delete, data: { confirm: t('tableau.confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('personnes.index.new'), new_personne_path %>

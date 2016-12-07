@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nombre_jour: 1
+  nbr_ideal_benevole: 1
+  duree_shift: 1
+
+two:
+  name: MyString
+  nombre_jour: 1
+  nbr_ideal_benevole: 1
+  duree_shift: 1

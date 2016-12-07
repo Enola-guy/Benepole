@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('shifts.index.title') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('shifts.index.strtdate') %></th>
+      <th><%= t('shifts.index.enddate') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shifts.each do |shift| %>
+      <tr>
+        <td><%= shift.date_debut %></td>
+        <td><%= shift.quels_jours %></td>
+        <td><%= link_to t('tableau.show'), shift %></td>
+        <td><%= link_to t('tableau.edit'), edit_shift_path(shift) %></td>
+        <td><%= link_to t('tableau.destroy'), shift, method: :delete, data: { confirm: t('tableau.confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('shifts.index.new'), new_shift_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('missions.index.title')%></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('name')%></th>
+      <th><%= t('missions.index.nbrday')%></th>
+      <th><%= t('missions.index.nbrvltr')%></th>
+      <th><%= t('missions.index.lasth')%></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @missions.each do |mission| %>
+      <tr>
+        <td><%= mission.name %></td>
+        <td><%= mission.nombre_jour %></td>
+        <td><%= mission.nbr_ideal_benevole %></td>
+        <td><%= mission.duree_shift %></td>
+        <td><%= link_to t('tableau.show'), mission %></td>
+        <td><%= link_to t('tableau.edit'), edit_mission_path(mission) %></td>
+        <td><%= link_to t('tableau.destroy'), mission, method: :delete, data: { confirm: t('tableau.confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('missions.index.new'), new_mission_path %>
