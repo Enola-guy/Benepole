@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  get 'welcome/index'
+
+  scope "(:locale)", locale: /fr|en/ do
+  root to: "home#index"
+  
+
 
   resources :shifts
   resources :rapports
   resources :personnes
   resources :missions
   resources :festivals
-  
-  root to: "home#index"
-  # root to: "welcome#index"
-  # root to: "festival#index"
-
+  #root to: "festivals#index"
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -66,4 +66,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+end
 end
