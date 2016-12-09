@@ -1,31 +1,33 @@
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-  <li><a href="#!">two</a></li>
+<li><%= link_to "English", locale: "en" %></li>
+<li class="divider"></li>
+<li><%= link_to "French", locale: "fr" %></li>
 </ul>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Logo</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="personnes">Personnes</a></li>
-        <li><a href="festivals">Festivals</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Langue<i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-    </div>
-  </nav>
+<nav>
+  <div class="nav-wrapper blue darken-1">
+    <a href="home" class="medium material-icons middle-left">library_music</a>
+    <ul class="right middle-hide-on-med-and-down">
+      <li><a href="personnes">Personnes</a></li>
+      <li><a href="festivals">Festivals</a></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button middle"  data-activates="dropdown1">Language<i class="small material-icons right">language</i></a></li>
+    </ul>
+  </div>
+</nav>
 <!DOCTYPE html>
 <html>
 <head>
+
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>BENEPOLE2</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
-
+<!--<script>
+    $(document).ready(function() {
+      $('select').material_select();
+    });-->
+</script>
 </body>
 </html>

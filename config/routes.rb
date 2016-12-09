@@ -1,16 +1,25 @@
 Rails.application.routes.draw do
 
-  scope "(:locale)", locale: /fr|en/ do
-  root to: "home#index"
+  #source https://www.youtube.com/watch?v=kBdZ9_yGLjg
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+ 
+    resources :shifts
+    resources :rapports
+    resources :personnes
+    resources :missions
+    resources :festivals
+    root to: "festivals#index"
+  
+  end
+
+
+  # j'ai dût rajouter à la fin de la ligne le "via get/post"
+  match'*path', to: redirect("/#{I18n.default_locale}/%{path}"), via: [:get, :post] 
   
 
+  # Code juste en dessous fonctionne pas
+  # => match'', to: redirect("/#{I18n.default_locale}"), via: [:get, :post]
 
-  resources :shifts
-  resources :rapports
-  resources :personnes
-  resources :missions
-  resources :festivals
-  #root to: "festivals#index"
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -66,5 +75,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
 end
