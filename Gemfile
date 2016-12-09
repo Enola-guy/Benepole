@@ -25,6 +25,12 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# aucune idée de ce que je fou, tuto :https://www.amberbit.com/blog/2015/11/28/how-to-deploy-rails-on-a-vps/
+gem 'figaro'
+gem 'puma'
+# fin du aucune idée
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -42,8 +48,17 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
+  
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # ajoutés aussi avec le tuto https://www.amberbit.com/blog/2015/11/28/how-to-deploy-rails
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
+
+
+
 
